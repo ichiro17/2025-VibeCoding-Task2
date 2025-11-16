@@ -131,6 +131,76 @@
   .section-about {
     background-color: #16213e;
   }
+
+  .section-about .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-content {
+    max-width: 600px;
+  }
+
+  .about-content p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .about-list {
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .about-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .about-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .about-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .about-button.primary {
+    background-color: #00b4d8;
+    color: #ffffff;
+  }
+
+  .about-button.primary:hover {
+    background-color: #90e0ef;
+    color: #0d1b2a;
+  }
+
+  .about-button.secondary {
+    background-color: transparent;
+    color: #00b4d8;
+    border: 1px solid #00b4d8;
+  }
+
+  .about-button.secondary:hover {
+    background-color: #00b4d8;
+    color: #ffffff;
+  }
+
+  .about-image-wrapper {
+    text-align: center;
+  }
+
+  .about-image-wrapper img {
+    max-width: 500px;
+    width: 100%;
+    object-fit: cover;
+  }
   /* CSS:ABOUT-END */
 
   /* CSS:SKILLS-START */
@@ -161,14 +231,26 @@
       font-size: 2.5rem;
     }
 
-    .section-about .container,
+    .section-about .container {
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .section-about .about-content {
+      flex: 1;
+    }
+
+    .section-about .about-image-wrapper {
+      flex: 1;
+    }
+
     .section-projects .container {
       display: flex;
       align-items: center;
       gap: 2rem;
     }
 
-    .section-about img,
     .section-projects img {
       width: 50%;
     }
@@ -208,10 +290,23 @@
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
         <div class="container">
-          <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 About 區的占位內容，未來會用 Section SDD 產生正式內容。</p>
-          <p>請開發者將新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。</p>
-          <img src="https://source.unsplash.com/600x400/?workspace,code" alt="工作桌上擺放筆電與筆記本的開發者工作環境" loading="lazy">
+          <div class="about-content">
+            <h2 id="about-heading" class="section-title">關於我</h2>
+            <p>我是一名專注於打造優質使用者體驗的前端工程師 ，同時也熱衷於教學與自由接案。主要技能包含 HTML, CSS, JavaScript，以及 React 和 Vue 等現代前端框架。</p>
+            <p>我畢業於資訊工程相關科系，深信溝通是專案成功的基石。我喜歡將複雜的技術概念轉化為簡單易懂的語言，並享受與團隊成員共同解決問題的過程。</p>
+            <ul class="about-list">
+              <li>我可以為您打造響應式、高效能的網頁應用。</li>
+              <li>我能協助您將設計稿精準轉換為高品質的程式碼。</li>
+              <li>我提供前端技術諮詢與教學，幫助您的團隊提升開發能力。</li>
+            </ul>
+            <div class="about-buttons">
+              <a href="#projects" class="about-button primary">查看作品集</a>
+              <a href="#contact" class="about-button secondary">聯絡我</a>
+            </div>
+          </div>
+          <div class="about-image-wrapper">
+            <img src="https://source.unsplash.com/600x800/?developer,programming" alt="一位正在專注寫程式的工程師" loading="lazy">
+          </div>
         </div>
       </section>
       <!-- SECTION:ABOUT-END -->
@@ -219,7 +314,7 @@
       <!-- SECTION:SKILLS-START -->
       <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
         <div class="container">
-          <h2 id="skills-heading" class="section-title">技能（之後會用 Section SDD 替換）</h2>
+          <h2 id="skills-heading" class="section-title">技能（之後會用 Section SDD 替換 ）</h2>
           <p>這裡目前是 Skills 區的占位內容，未來會用 Section SDD 產生正式內容。</p>
           <p>請開發者將新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。</p>
         </div>
@@ -240,7 +335,7 @@
       <!-- SECTION:CONTACT-START -->
       <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
         <div class="container">
-          <h2 id="contact-heading" class="section-title">聯絡我（之後會用 Section SDD 替換）</h2>
+          <h2 id="contact-heading" class="section-title">聯絡我（之後會用 Section SDD 替換 ）</h2>
           <p>這裡目前是 Contact 區的占位內容，未來會用 Section SDD 產生正式內容。</p>
           <p>請開發者將新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。</p>
           <p>可預留以下連結示意：</p>
@@ -256,7 +351,7 @@
     </main>
 
     <footer>
-      <p>© 2024 Your Name · Frontend Dev. 保留所有權利。</p>
+      <p>© 2024 Your Name · Frontend Dev. 保留所有權利 。</p>
     </footer>
   </div>
 </body>
